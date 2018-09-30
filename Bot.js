@@ -26,3 +26,7 @@ bot.on('message', message =>{
 });
 
 bot.login(process.env.BOT_TOKEN)
+
+    if(msg === prefix + "fuck of" && message.channel.id === "477467852576784384"){
+        message.channel.send('fack of too') // sends a message to the channel, with the content 
+    } 
