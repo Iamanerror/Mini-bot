@@ -1,32 +1,60 @@
-var Discord = require('discord.js');
-var botName = require('./package.json');
-var bot = new Discord.Client();
+/**
+ * A ping pong bot, whenever you send "ping", it replies "pong".
+ */
 
-bot.on('message', message =>{
+// Import the discord.js module
+const Discord = require('discord.js');
 
-    // Variables
-    var sender = message.author; //The person who sent the message
-    var msg = message.content;
-    var prefix = "!" //The text before commands, you can put anything that you prefer
+// Create an instance of a Discord client
+const client = new Discord.Client();
 
-    if(message.author.id != "494954303258099733" && message.channel.id === "477467852576784384"){
-        if(msg.startsWith('>', 0)){
-            if(msg === prefix + "hey" && message.channel.id === "477467852576784384"){
-                message.channel.send('BOOM!!!!!') // Sends a message to the channel, with the content
-            }
-            else{
-                message.channel.send("Hey, I only understand !bang right now. More will be added when my creator is free. :) ")
-            }
-        }
-        else{
-            message.delete();
-            message.channel.send(sender + " this bot only accepts commands which starts with '!' dot.");
-        }
-    }
+/**
+ * The ready event is vital, it means that only _after_ this will your bot start reacting to information
+ * received from Discord
+ */
+client.on('ready', () => {
+  console.log('I am ready!');
 });
+
+// Create an event listener for messages
+client.on('message', message => {
+  // If the message is "ping"
+  if (message.content === 'ping') {
+    // Send "pong" to the same channel
+    message.channel.send('pong');
+  }
+});
+
+// Log our bot in using the token from https://discordapp.com/developers/applications/me
+client.login('NDk0OTU0MzAzMjU4MDk5NzMz.DpvY6Q.d2G_3jzyLmcWCzfVgqbKb7EEhN8');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+         
+
+       
+        
+
+
+
+      
+  
+
 
 bot.login(process.env.BOT_TOKEN)
 
-    if(msg === prefix + "fuck of" && message.channel.id === "477467852576784384"){
-        message.channel.send('fack of too') // sends a message to the channel, with the content 
-    } 
+
+        
+  
